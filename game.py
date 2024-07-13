@@ -45,16 +45,16 @@ class Player(pygame.sprite.Sprite):
         }
 
         # Calculate velocity
-        desired_velocity = vector(0, 0)
+        velocity = vector(0, 0)
         for key, (dx, dy) in movement_keys.items():
             if keys[key]:
-                desired_velocity += vector(dx, dy)
+                velocity += vector(dx, dy)
 
         # Set velocity
-        if desired_velocity.length() > 0:
-            desired_velocity = desired_velocity.normalize() * self.speed
+        if velocity.length() > 0:
+            velocity = velocity.normalize() * self.speed
         # Slower acceleration
-        self.velocity += (desired_velocity - self.velocity) * (self.acceleration * dt)
+        self.velocity += (velocity - self.velocity) * (self.acceleration * dt)
         # Update position
         self.position += self.velocity * dt
         # Keep player within area
