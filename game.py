@@ -136,7 +136,6 @@ class Game:
         self.houses = pygame.sprite.Group()
         self.map_level = None
         pygame.mouse.set_visible(False)  # Hide the mouse cursor
-        # Example: Generate a map level of size 2500x2500 with 20 houses
         self.map_level = Map_Level(2500, 2500, 20)
 
     def check_overlap(self, new_house):
@@ -202,7 +201,7 @@ class Game:
         self.player.draw_player(camera_offset)
         self.player.draw_stats()
         fps_text = self.font.render(f'FPS: {int(self.frame.get_fps())}', True, WHITE)
-        self.display.blit(fps_text, (10, 160))  # Adjust position as needed
+        self.display.blit(fps_text, (10, 160))
         
         # Draw trigger rectangle following the mouse
         mouse_pos = pygame.mouse.get_pos()
