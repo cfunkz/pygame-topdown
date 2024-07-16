@@ -33,16 +33,7 @@ class Player(pygame.sprite.Sprite):
 
     def player_move(self, keys, dt):
         # Movement keys mapped for smoother key response
-        movement_keys = {
-            pygame.K_LEFT: (-1, 0),
-            pygame.K_a: (-1, 0),
-            pygame.K_RIGHT: (1, 0),
-            pygame.K_d: (1, 0),
-            pygame.K_UP: (0, -1),
-            pygame.K_w: (0, -1),
-            pygame.K_DOWN: (0, 1),
-            pygame.K_s: (0, 1)
-        }
+        movement_keys = MOVEMENT_KEYS
 
         # Calculate velocity
         velocity = vector(0, 0)
